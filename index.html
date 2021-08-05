@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="scripts/slick-1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="scripts/slick-1.8.1/slick/slick-theme.css"/>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="container-fluid">
+        <div class="slides row">
+            <div>
+                <img alt="Spinhead Logo" src="images/Spin_Head_Media_Logo_new_large-55.png" />
+            </div>
+            <div>
+                <h1>Wayfinding Slide</h1>
+            </div>
+            <div>
+                <h1>Info/Sign Slide</h1>
+            </div>
+            <div>
+                <h1>Labeling Slide</h1>
+                <div class="col-3">
+                    <img alt="Security Badge" src="images/security.png" />
+                </div>
+                <div class="col-9">
+                    <ul>
+                        <li>Food</li>
+                        <li>Water</li>
+                        <li>Restrooms</li>
+                        <li>Registration</li>
+                        <li>Information</li>
+                        <li>Uniforms</li>
+                        <li>Coordination</li>
+                        <li>Transportation</li>
+                        <li>Logistics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        Desire
+        - Quickly show the various uses of the figure… using pictures and/or symbols
+        - Shape has different meaning by changing out head insert: See website example
+        - Pointing device becomes sign holder when hang sign from extended arm
+        - Selfie magnet
+        - Easy to find in crowds or roadways = grab attention (Have testimonials)
+        - Able to offset purchase price with sponsorship on head insert or hanging from arm
+        - Always difficult for Event Directors to attract, retain and train volunteers
+        - ??? More effective than real person when no need/want for interaction
+        - ??? Show history of continual use since cave dwellers
+        - ??? Combine Zone Crew and Spinhead websites??? (market as Zone Crew only)
+        Applications
+        - Provide directions (sign industry terms as wayfinding)…
+        - People hate getting lost and most map apps don’t work for short distances
+        o Big cost to hire manpower
+        o Still have expense of “Free” volunteers
+         Food, water, uniforms, coordination, transportation
+         Totals often higher, yet many don’t look to overall costs
+        o Covid Issues
+
+        Customers are currently B2B for figures over 10 feet tall
+        - Primary used rental options in the past
+        - Presently have inventory over 100 units ready to sell
+        - Key targets
+        o Security/Personnel firms (Contemporary Services Corp, Wess Event Services)
+        o Large public events:
+         Marathons, Triathlons and Cycling
+         Concerts / Music Festivals
+         City / State activities = Festivals, Fairs, Sports &amp; Political
+        o Advertising Firms (They create special promotions for clients)
+        o Parking
+        o College campuses (for visitors, parent’s weekend,
+        - Secondary targets
+        o Mom &amp; Pop Sports Events (Cheap)
+        o Construction (Currently restricted by FHWA)
+
+        B2C Opportunities
+        - Have figure for street play safety and school crossings
+        - Need to figure out how to make in pieces for packaging and shipping
+        Biggest Problems with Wayfinding
+        - Standard sign shapes get lost amongst other commercial signs
+        - Many people either don’t read signs or distracted or unable to read
+        - Staff/Volunteers get lost in crowd because not tall enough
+        - Uniform colors matter little unless staff/volunteers group together
+        Durability = Can be used in nasty weather and high winds / people can stand on top of base
+        -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="scripts/slick-1.8.1/slick/slick.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $('.slides').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    centerMode: true,
+                    focusOnSelect: true,
+                    centerPadding: '0px',
+                    pauseOnHover: true,
+                    dots: true
+                });
+            });
+        </script>
+    </body>
+</html>

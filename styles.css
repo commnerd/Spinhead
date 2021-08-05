@@ -1,0 +1,17 @@
+.slides {
+    max-height: 25vh;
+}
+
+.slides img {
+    max-height: 24vh;
+}
+
+.slides div.col-3 {
+    display: inline-block;
+    width: 33.3333%;
+}
+
+.slides div.col-9 {
+    display: inline-block;
+    width: 66.6666%;
+}
