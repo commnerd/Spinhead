@@ -12,7 +12,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: spinhead
-      MYSQL_DATABASE: spinhead
-      MYSQL_USER: spinhead
-      MYSQL_PASSWORD: spinhead
+      MYSQL_ROOT_PASSWORD: zonecrew
+      MYSQL_DATABASE: zonecrew
+      MYSQL_USER: zonecrew
+      MYSQL_PASSWORD: zonecrew
