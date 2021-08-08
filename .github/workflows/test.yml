@@ -21,5 +21,5 @@ jobs:
       - name: Copy Files (scp)
         run: |
           pwd && ls -lA
-          scp -ri ~/.ssh/id_rsa ./modules/* ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/modules/
-          scp -ri ~/.ssh/id_rsa ./themes/* ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/themes/
+          scp -ri ~/.ssh/id_rsa ./modules/* ${{secrets.ZONECREW_SSH_USERNAME}}:${{secrets.ZONECREW_SSH_PASSWORD}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/modules/
+          scp -ri ~/.ssh/id_rsa ./themes/* ${{secrets.ZONECREW_SSH_USERNAME}}:${{secrets.ZONECREW_SSH_PASSWORD}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/themes/
