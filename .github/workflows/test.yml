@@ -15,7 +15,7 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{secrets.ZONECREW_SSH_USERNAME}}" > ~/.ssh/id_rsa
+          echo "${{secrets.ZONECREW_PRIVATE_RSA}}" > ~/.ssh/id_rsa
           ssh-keyscan -H ${{secrets.ZONECREW_HOST}} > ~/.ssh/known_hosts
           sudo chown 400 ~/.ssh/id_rsa
       - name: Copy Files (scp)
