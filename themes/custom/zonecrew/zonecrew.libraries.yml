@@ -6,5 +6,10 @@ global-styling:
 
 global-scripts:
   version: 1.x
+  js:
+    theme:
+      js/jquery.cycle.all.js: {}
+      js/jquery.hoverIntent.js: {}
+      js/json2.js: {}
   dependencies:
     - core/jquery
