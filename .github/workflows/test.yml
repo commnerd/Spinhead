@@ -22,5 +22,5 @@ jobs:
         run: |
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/modules"
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/themes"
-          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./modules/* ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/modules/
-          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./themes/* ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/themes/
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./modules ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./themes ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/
