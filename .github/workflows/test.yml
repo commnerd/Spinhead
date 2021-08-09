@@ -20,7 +20,7 @@ jobs:
           sudo chown 400 ~/.ssh/id_rsa
       - name: Copy Files (scp)
         run: |
-          ssh ${{secrets.ZONECREW_SSH_USERNAME}}:'${{secrets.ZONECREW_SSH_PASSWORD}}'@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/modules"
-          ssh ${{secrets.ZONECREW_SSH_USERNAME}}:'${{secrets.ZONECREW_SSH_PASSWORD}}'@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/themes"
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/modules"
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/themes"
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./modules/* ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/modules/
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./themes/* ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/themes/
