@@ -20,7 +20,12 @@ jobs:
           sudo chown 400 ~/.ssh/id_rsa
       - name: Copy Files (scp)
         run: |
+          tar -cjf ./modules.tar.bz2 ./modules
+          tar -cjf ./themes.tar.bz2 ./themes
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/modules"
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/themes"
-          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./modules ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/
-          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./themes ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./modules.tar.bz2 ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./themes.tar.bz2 ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "cd /home1/zonecrew/test.spinheadmedia.com && tar -xvf themes.tar.bz2 && tar -xvf modules.tar.bz2"
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm /home1/zonecrew/test.spinheadmedia.com/modules.tar.bz2"
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm /home1/zonecrew/test.spinheadmedia.com/themes.tar.bz2"
