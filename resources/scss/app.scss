@@ -1,0 +1,16 @@
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+img {
+    display: block;
+    height: 25vh;
+}
+
+#carouselExampleControls {
+    background-color: grey;
+    height: 25vh;
+}
+
+.row {
+    border-bottom: thin solid black;
+}
