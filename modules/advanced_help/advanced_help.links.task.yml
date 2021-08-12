@@ -1,3 +1,0 @@
-advanced_help.local_tasks:
-  deriver: 'Drupal\advanced_help\Plugin\Derivative\DynamicLocalTasks'
-  weight: 100
