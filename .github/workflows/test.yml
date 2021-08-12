@@ -22,8 +22,12 @@ jobs:
         run: |
           tar -cjf ./modules.tar.bz2 ./modules
           tar -cjf ./themes.tar.bz2 ./themes
+          tar -cjf ./libraries.tar.bz2 ./libraries
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "mkdir -p /home1/zonecrew/test.spinheadmedia.com/sites/all/libraries"
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/modules"
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/themes"
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/sites/all/libraries"
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./modules.tar.bz2 ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./themes.tar.bz2 ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/
-          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "cd /home1/zonecrew/test.spinheadmedia.com && tar -xvf themes.tar.bz2 && tar -xvf modules.tar.bz2"
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./libraries.tar.bz2 ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/sites/all/
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "cd /home1/zonecrew/test.spinheadmedia.com && tar -xvf themes.tar.bz2 && tar -xvf modules.tar.bz2 && cd sites/all && tar -xvf libraries.tar.bz2"
