@@ -13,4 +13,8 @@ img {
 
 .row {
     border-bottom: thin solid black;
+
+    &:last-of-type {
+        border-bottom: none;
+    }
 }

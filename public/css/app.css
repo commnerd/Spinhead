@@ -11281,3 +11281,6 @@ img {
 .row {
   border-bottom: thin solid black;
 }
+.row:last-of-type {
+  border-bottom: none;
+}
