@@ -25,9 +25,7 @@ jobs:
           tar -cjf ./libraries.tar.bz2 ./libraries
       - name: Remove old files
         run: |
-          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/modules"
-          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/themes"
-          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/libraries"
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "rm -fR /home1/zonecrew/test.spinheadmedia.com/modules && rm -fR /home1/zonecrew/test.spinheadmedia.com/themes && rm -fR /home1/zonecrew/test.spinheadmedia.com/libraries"
       - name: Copy Files (scp)
         run: |
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./modules.tar.bz2 ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/
@@ -35,6 +33,4 @@ jobs:
           sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} scp -ri ~/.ssh/id_rsa ./libraries.tar.bz2 ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}}:/home1/zonecrew/test.spinheadmedia.com/
       - name: Unzip files
         run: |
-          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "cd /home1/zonecrew/test.spinheadmedia.com && tar -xvf themes.tar.bz2"
-          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "cd /home1/zonecrew/test.spinheadmedia.com && tar -xvf modules.tar.bz2"
-          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "cd /home1/zonecrew/test.spinheadmedia.com && tar -xvf libraries.tar.bz2"
+          sshpass -p ${{secrets.ZONECREW_SSH_PASSWORD}} ssh ${{secrets.ZONECREW_SSH_USERNAME}}@${{secrets.ZONECREW_HOST}} "cd /home1/zonecrew/test.spinheadmedia.com && tar -xvf themes.tar.bz2 && tar -xvf modules.tar.bz2 && tar -xvf libraries.tar.bz2"
